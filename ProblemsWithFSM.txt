@@ -1,0 +1,27 @@
+-De advancedFSM is erg groot naar mijn mening?
+Hier houd je gewoon een variabele currentstate bij?
+Een methode voor initialize(State startingState)
+Methode voor switch naar andere state: ChangeState(State newState)
+Waarbij je de exit van current state aanroept.
+Currenstate veranderd naar de nieuwe state.
+De enter van de nieuwe state.
+
+De abstracte klasse FSMState:
+Heeft logic die wellicht bij specifieke states geplaatst moet worden? 
+In princiepe heb je alleen de volgende nodig:
+
+Enter()
+HandleInput()
+
+Do's:
+LogicUpdate
+PhysicsUpdate
+
+Exit();
+
+AdvancedTankController:
+Van monobehaviour af laten leiden. 
+Bij start de statemachine maken en verschillende states.
+
+Bij update de statementmachine current state handleInput en logicUpdate aanroepen.
+Bij fixedUpdate de physics update aanroepen. 
